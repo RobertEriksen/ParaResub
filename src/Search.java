@@ -205,7 +205,7 @@ public class Search {
 
         // 1.1 Create runs without warmups
         // -R 30 -d src/Results/P1_1.txt src/DataTestSets/10Mab.txt aaaaaaaaaa
-        /*P1(argv); //Uncomment for Problem 1.1*/
+        //P1(argv); //Uncomment for Problem 1.1
 
         //1.2 Create runs with a fitting amount of warmups
         /* -R 30 -W 10 -d src/Results/P1_2.txt src/DataTestSets/10Mab.txt aaaaaaaaaa */
@@ -214,7 +214,7 @@ public class Search {
         /* Problem 1 end */
 
         /*Problem 2 start*/
-        /* -R 30 -W 30 -d src/Results/P1_2.txt src/DataTestSets/10Mab.txt aaaaaaaaaa 15 */
+        /* -R 30 -W 10 -d src/Results/P1_2.txt src/DataTestSets/10Mab.txt aaaaaaaaaa 15 */
         /*P2_1(argv);*/
 
         /* Problem 2 end */
@@ -222,12 +222,12 @@ public class Search {
         /* Problem 3 start */
 
         // 3.1 Small order of growth of tasks
-        //-R 30 -W 20 -d src/Results/P1_2.txt src/DataTestSets/10Mab.txt aaaaaaaaaa 10
+        //-R 30 -W 10 -d src/Results/P1_2.txt src/DataTestSets/10Mab.txt aaaaaaaaaa 10
         /*P3_1(argv);*/
 
         // 3.2 Large order of growth of tasks
-        //-R 20 -W 20 -d src/Results/P1_2.txt src/DataTestSets/10Mab.txt aaaaaaaaaa 15
-        /*P3_2(argv);*/
+        //-R 30 -W 10 -d src/Results/P1_2.txt src/DataTestSets/10Mab.txt aaaaaaaaaa 15
+        //P3_2(argv);
 
         /* Problem 3 end */
 
@@ -235,14 +235,14 @@ public class Search {
 
         // 4.1 Small order of growth of tasks and threads
 
-        //-R 20 -W 20 -d src/Results/P1_2.txt src/DataTestSets/10Mab.txt aaaaaaaaaa 5 5
+        //-R 30 -W 10 -d src/Results/P1_2.txt src/DataTestSets/10Mab.txt aaaaaaaaaa 5 5
         /*P4_1(argv);*/
 
         // 4.2 Large order of growth of tasks and threads
 
-        //-R 20 -W 20 -d src/Results/P1_2.txt src/DataTestSets/10Mab.txt aaaaaaaaaa 4 4
+        //-R 30 -W 10 -d src/Results/P1_2.txt src/DataTestSets/10Mab.txt aaaaaaaaaa 4 4
 
-        /*P4_2(argv);*/
+        //P4_2(argv);
         /* Problem 4 End*/
 
     }
@@ -388,6 +388,7 @@ public class Search {
         String[] Argv;
         int NtaskMax = Search.ntasks;
         for(int n = 0; n < NtaskMax+1; n++){
+            System.out.println("n: " + n + ", NtaskMax: " + NtaskMax);
             Argv = new String[]{"-R", Search.runs+"", "-W", Search.warmups+"", "-d", "src/Results/P3_1.txt", Search.fname, new String(Search.pattern), (int) Math.pow(2,n)+""};
             P3(Argv);
         }
